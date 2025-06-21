@@ -107,7 +107,9 @@ services:
     depends_on:
       - zammad-railsserver
 
-  zammad-postgresql:
+  zammad-postgresql:    
+    profiles:
+      - do-not-start
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-zammad_production}
       POSTGRES_USER: ${POSTGRES_USER:-zammad}
